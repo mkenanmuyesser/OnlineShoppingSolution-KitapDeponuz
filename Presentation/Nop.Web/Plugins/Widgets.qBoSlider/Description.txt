@@ -1,0 +1,8 @@
+Group: Widgets
+FriendlyName: qBoSlider
+SystemName: Widgets.qBoSlider
+Version: 1.01
+SupportedVersions: 3.70
+Author: Alvaar
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.qBoSlider.dll

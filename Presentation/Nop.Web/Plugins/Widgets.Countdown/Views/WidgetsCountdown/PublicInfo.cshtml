@@ -1,0 +1,19 @@
+﻿@model Nop.Plugin.Widgets.Countdown.Models.PublicInfoModel
+@{
+    Layout = "";
+}
+@using Nop.Web.Framework;
+<div class="block block-countdown">
+    <div class="title">
+            @Model.Title
+    </div>
+    <div class="clear"></div>
+    <div class="listbox">
+        <div class="countdown-message">
+        @Model.Message
+        </div>
+        <div id="defaultCountdown" class="countdown-counter"></div>
+        @Html.Raw(Model.Counter)
+    
+    </div>
+</div>

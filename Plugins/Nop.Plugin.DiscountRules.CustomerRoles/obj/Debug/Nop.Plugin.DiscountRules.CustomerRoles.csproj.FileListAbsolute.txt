@@ -1,0 +1,10 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Views\DiscountRulesCustomerRoles\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\DiscountRules.CustomerRoles\Nop.Plugin.DiscountRules.CustomerRoles.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\Nop.Plugin.DiscountRules.CustomerRoles.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\Nop.Plugin.DiscountRules.CustomerRoles.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.DiscountRules.CustomerRoles\obj\Debug\Nop.Plugin.DiscountRules.CustomerRoles.csprojResolveAssemblyReference.cache

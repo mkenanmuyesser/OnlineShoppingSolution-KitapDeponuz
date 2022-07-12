@@ -1,0 +1,8 @@
+Group: Misc
+FriendlyName: Brand Carousel Plugin
+SystemName: NopHub.BrandCarousel
+Version: 1.02
+SupportedVersions: 3.70
+Author: www.nophub.com
+DisplayOrder: 1
+FileName: NopHub.Nop.Plugin.BrandCarousel.dll

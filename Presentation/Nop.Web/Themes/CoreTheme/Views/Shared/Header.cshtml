@@ -1,0 +1,52 @@
+﻿@using Nop.Core
+@using Nop.Core.Infrastructure
+@using Nop.Services.Localization
+@using Nop.Web.Framework.Themes
+@{
+    //logo path
+    var currentThemeName = EngineContext.Current.Resolve<IThemeContext>().WorkingThemeName;
+    var logoPath = "~/Themes/" + currentThemeName + "/Content/images/logo.gif";
+
+    //store name
+    var storeName = EngineContext.Current.Resolve<IStoreContext>().CurrentStore.GetLocalized(x => x.Name);
+}
+<nav class="top-menu" role="navigation">
+    <div class="headerlinks">
+        @Html.Widget("header")
+        @Html.Action("HeaderLinks", "Common")
+        @*FlyoutShoppingCart is now loaded from HeaderLinks*@
+        @*@Html.Action("FlyoutShoppingCart", "ShoppingCart")*@
+    </div>
+</nav>
+<div class="header">
+    <div class="row">
+        <div class="col-sm-5 col-md-5">
+            @Html.Widget("header")
+            <div class="header-logo">
+                <a href="@Url.RouteUrl("HomePage")" class="logo">
+                    <img title="" alt="@storeName" src="@Url.Content(logoPath)">
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-7 col-md-7">
+            <div class="header-selectors-wrapper">
+                <div class="search-box store-search-box pull-right">
+                    @Html.Action("SearchBox", "Catalog")
+                </div>
+                <div class="header-selectors">
+                    @*<div class="taxtype-selector">
+                        @Html.Action("TaxTypeSelector", "Common")
+                    </div>*@
+                    <div class="currency-selector">
+                        @Html.Action("CurrencySelector", "Common")
+                    </div>
+                    <div class="language-selector">
+                        @Html.Action("LanguageSelector", "Common")
+                    </div>
+                    @Html.Widget("header_selectors")
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+

@@ -1,0 +1,111 @@
+﻿@model Nop.Plugin.Widgets.Layout.Models.LayoutWidgetSettingsViewModel
+@using Nop.Web.Framework;
+@{ Layout = ""; }
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+@using (Html.BeginForm()) {
+@Html.AntiForgeryToken()
+<table class="adminContent">
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.content_before_OverrideForStore, model => model.content_before, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.content_before):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.content_before, "RichEditor")
+            @Html.ValidationMessageFor(model => model.content_before)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.left_side_column_before_OverrideForStore, model => model.left_side_column_before, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.left_side_column_before):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.left_side_column_before, "RichEditor")
+            @Html.ValidationMessageFor(model => model.left_side_column_before)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.left_side_column_after_OverrideForStore, model => model.left_side_column_after, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.left_side_column_after):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.left_side_column_after, "RichEditor")
+            @Html.ValidationMessageFor(model => model.left_side_column_after)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.main_column_before_OverrideForStore, model => model.main_column_before, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.main_column_before):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.main_column_before, "RichEditor")
+            @Html.ValidationMessageFor(model => model.main_column_before)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.main_column_after_OverrideForStore, model => model.main_column_after, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.main_column_after):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.main_column_after, "RichEditor")
+            @Html.ValidationMessageFor(model => model.main_column_after)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.right_side_column_before_OverrideForStore, model => model.right_side_column_before, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.right_side_column_before):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.right_side_column_before, "RichEditor")
+            @Html.ValidationMessageFor(model => model.right_side_column_before)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.right_side_column_after_OverrideForStore, model => model.right_side_column_after, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.right_side_column_after):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.right_side_column_after, "RichEditor")
+            @Html.ValidationMessageFor(model => model.right_side_column_after)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.content_after_OverrideForStore, model => model.content_after, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.content_after):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.content_after, "RichEditor")
+            @Html.ValidationMessageFor(model => model.content_after)
+        </td>
+    </tr>
+    <tr>
+        <td class="adminTitle">
+            @Html.OverrideStoreCheckboxFor(model => model.footer_OverrideForStore, model => model.footer, Model.ActiveStoreScopeConfiguration)
+            @Html.NopLabelFor(model => model.footer):
+        </td>
+        <td class="adminData">
+            @Html.EditorFor(model => model.footer, "RichEditor")
+            @Html.ValidationMessageFor(model => model.footer)
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div class="section-header">
+                <h1 class="title"></h1> 
+            </div> 
+        </td>
+    </tr> 
+    <tr>
+        <td colspan="2" width="100%">
+            <input type="submit" name="save" class="k-button" value="@T("Admin.Common.Save")" />
+        </td>
+    </tr> 
+</table>
+}

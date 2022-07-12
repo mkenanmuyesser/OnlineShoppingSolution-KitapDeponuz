@@ -1,0 +1,11 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Views\PaymentManual\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Views\PaymentManual\PaymentInfo.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.Manual\Nop.Plugin.Payments.Manual.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.csprojResolveAssemblyReference.cache
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.Manual\obj\Debug\Nop.Plugin.Payments.Manual.pdb

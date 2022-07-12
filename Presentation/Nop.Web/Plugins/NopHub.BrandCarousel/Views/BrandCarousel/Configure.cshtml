@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "";
+}
+@using Nop.Web.Framework;
+@using NopHub.Nop.Plugin.BrandCarousel.Models;
+@model NopHub.Nop.Plugin.BrandCarousel.Models.BrandCarouselSettings
+
+@Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+
+@{
+     
+     List<string> widgets = new List<string>();
+     if (!String.IsNullOrEmpty(Model.EnabledWidgetZones)) {
+         widgets = Model.EnabledWidgetZones.Split(new char[] { ',' }).ToList();
+     } 
+}
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".t-button").click(function () {
+                var valx = $("#multiplewidgets").val();
+                alert(valx);
+                $("#EnabledWidgetZones").val(valx);
+            });
+        });
+
+
+    </script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+ <table class="adminContent" style="margin: 20px; width: 85%;">
+
+    <tr>
+        <td class="adminTitle">
+            @Html.NopLabelFor(model => model.EnabledWidgetZones):
+        </td>
+        <td class="adminData">
+
+            <select multiple="multiple" id="multiplewidgets" style="width: 600px; height: 200px;">
+            @foreach (var s in BrandCarouselWidgetHelper.GetAllWidgetZones(""))
+            {
+                if (widgets.Contains(s)) {
+                <option selected="selected">@s</option>
+                }
+                else {
+                 <option>@s</option>   
+                }
+            }
+            </select>
+
+            @Html.HiddenFor(x => x.EnabledWidgetZones)
+
+            @Html.ValidationMessageFor(model => model.EnabledWidgetZones)
+        </td>
+    </tr>
+     <tr>
+         <td>
+
+         </td>
+         <td><input type="submit" name="save" class="t-button" value="@T("Admin.Common.Save")" /></td>
+     </tr>
+</table>
+
+}

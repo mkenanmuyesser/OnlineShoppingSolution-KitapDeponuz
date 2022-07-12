@@ -1,0 +1,10 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\Views\ShippingFixedRate\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\Nop.Plugin.Shipping.FixedRateShipping.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\Nop.Plugin.Shipping.FixedRateShipping.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Shipping.FixedRateShipping\Nop.Plugin.Shipping.FixedRateShipping.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Shipping.FixedRateShipping\obj\Debug\Nop.Plugin.Shipping.FixedRateShipping.csprojResolveAssemblyReference.cache
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Shipping.FixedRateShipping\obj\Debug\Nop.Plugin.Shipping.FixedRateShipping.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Shipping.FixedRateShipping\obj\Debug\Nop.Plugin.Shipping.FixedRateShipping.pdb

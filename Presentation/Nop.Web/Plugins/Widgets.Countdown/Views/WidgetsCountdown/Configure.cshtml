@@ -1,0 +1,73 @@
+﻿@{
+    Layout = "";
+}
+@model Nop.Plugin.Widgets.Countdown.Models.ConfigurationModel
+@using Nop.Web.Framework;
+@using System.Linq;
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.ZoneId):
+            </td>
+            <td class="adminData">
+                @Html.DropDownListFor(model => model.ZoneId, Model.AvailableZones)
+                @Html.ValidationMessageFor(model => model.ZoneId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Language)
+            </td>
+            <td class="adminData">
+                @Html.DropDownListFor(model => model.Language,Model.Languages)
+                @Html.ValidationMessageFor(model => model.Language)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Title):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Message):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Message)
+                @Html.ValidationMessageFor(model => model.Message)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Untill):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => Model.Time)
+                @Html.ValidationMessageFor(model => model.Time)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.UTCOffset):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => Model.UTCOffset)
+                @Html.ValidationMessageFor(model => model.UTCOffset)
+            </td>
+        </tr>
+        
+        <tr>
+            <td colspan="2">
+                <input type="submit" name="save" class="t-button" value="@T("Admin.Common.Save")" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,10 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Views\PaymentPurchaseOrder\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Views\PaymentPurchaseOrder\PaymentInfo.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Nop.Plugin.Payments.PurchaseOrder.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Nop.Plugin.Payments.PurchaseOrder.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PurchaseOrder\Nop.Plugin.Payments.PurchaseOrder.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PurchaseOrder\obj\Debug\Nop.Plugin.Payments.PurchaseOrder.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PurchaseOrder\obj\Debug\Nop.Plugin.Payments.PurchaseOrder.pdb

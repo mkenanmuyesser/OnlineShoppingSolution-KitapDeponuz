@@ -1,0 +1,9 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\Views\TaxFixedRate\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Tax.FixedRate\Nop.Plugin.Tax.FixedRate.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Tax.FixedRate\obj\Debug\Nop.Plugin.Tax.FixedRate.pdb

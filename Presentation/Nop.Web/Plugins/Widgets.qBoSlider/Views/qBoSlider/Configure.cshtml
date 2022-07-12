@@ -1,0 +1,210 @@
+﻿@{
+    Layout = "";
+}
+@model ConfigurationModel
+@using Nop.Web.Framework;
+@using Nop.Plugin.Widgets.qBoSlider.Models;
+@T("Plugins.Widgets.qBoSlider.ClearCache")
+<div id="slider-options-edit">
+    <ul>
+        <li @Html.RenderSelectedTabIndex(0, GetSelectedTabIndex())>
+            @T("Plugins.Widgets.qBoSlider.SlideCollection")
+        </li>
+        <li @Html.RenderSelectedTabIndex(1, GetSelectedTabIndex())>
+            @T("Plugins.Widgets.qBoSlider.SliderSettings")
+        </li>
+    </ul>
+    <div>
+        @TabSlideCollection()
+    </div>
+    <div>
+        @TabSettings()
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#slider-options-edit").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            },
+            select: tabstrip_on_tab_select
+        });
+    });
+</script>
+
+@*save selected tab index*@
+<input type="hidden" id="selected-tab-index" name="selected-tab-index" value="@(GetSelectedTabIndex())">
+
+@helper TabSettings()
+{
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.Action("StoreScopeConfiguration", "Setting", new { area = "Admin" })
+        <table class="adminContent">
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.ArrowNavigation):
+                </td>
+                <td class="adminData">
+                    @Html.DropDownListFor(model => model.ArrowNavigation, Model.AvailableArrowNavigations)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.BulletNavigation):
+                </td>
+                <td class="adminData">
+                    @Html.DropDownListFor(model => model.BulletNavigation, Model.AvailableBulletNavigations)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.AutoPlayInterval):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.AutoPlayInterval)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.SlideDuration):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.SlideDuration)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.MinDragOffsetToSlide):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.MinDragOffsetToSlide)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.SlideSpacing):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.SlideSpacing)
+                </td>
+            </tr>
+            <tr>
+                <td class="adminTitle">
+                    @Html.NopLabelFor(model => model.AutoPlay):
+                </td>
+                <td class="adminData">
+                    @Html.EditorFor(model => model.AutoPlay)
+                </td>
+            </tr>
+
+        </table>
+
+        <input type="submit" class="k-button" value="@T("Admin.Common.Save")" />
+    }
+}
+
+@helper TabSlideCollection()
+{
+    using (Html.BeginForm(null, null, FormMethod.Post, new { id = "slide-collection-form" }))
+    {
+        <table class="adminContent">
+            <tr>
+                <td>
+                    <div id="slider-grid"></div>
+
+                    <script>
+                        $(document).ready(function () {
+                            $("#slider-grid").kendoGrid({
+                                dataSource: {
+                                    type: "json",
+                                    transport: {
+                                        read: {
+                                            url: "@Html.Raw(Url.Action("SlideList", "qBoSlider"))",
+                                            type: "POST",
+                                            dataType: "json"
+                                        },
+                                        destroy: {
+                                            url: "@Html.Raw(Url.Action("SlideDelete", "qBoSlider"))",
+                                            type: "POST",
+                                            dataType: "json"
+                                        }
+                                    },
+                                    schema: {
+                                        data: "Data",
+                                        total: "Total",
+                                        errors: "Errors",
+                                        model: {
+                                            id: "Id"
+                                        }
+                                    },
+                                    error: function (e) {
+                                        display_kendoui_grid_error(e);
+                                        // Cancel the changes
+                                        this.cancelChanges();
+                                    },
+                                    serverPaging: true,
+                                    serverFiltering: true,
+                                    serverSorting: true
+                                },
+                                pageable: {
+                                    refresh: true,
+                                    numeric: false,
+                                    previousNext: false,
+                                    info: false
+                                },
+                                editable: {
+                                    confirmation: false,
+                                    mode: "inline"
+                                },
+                                scrollable: false,
+                                columns: [{
+                                    //TODO display localized values here
+                                    field: "Picture",
+                                    title: "@T("Plugins.Widgets.qBoSlider.Picture")",
+                                    template: "<img src='#=Picture#' />"
+                                }, {
+                                    field: "DisplayOrder",
+                                    title: "@T("Plugins.Widgets.qBoSlider.CreateOrUpdate.DisplayOrder")",
+                                    width: 100
+                                },
+                                {
+                                    field: "Id",
+                                    title: "@T("Admin.Common.Edit")",
+                                    width: 100,
+                                    template: "<input type='submit' value='@T("Admin.Common.Edit")' onclick=\"javascript:OpenWindow('@Url.Content("~/plugins/qboslider/editslide/")#=Id#?btnId=btnRefresh&formId=slide-collection-form', 1300, 500, true); return false;\" class='k-button' />"
+                                }, {
+                                    command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                                    title: "@T("Admin.Common.Delete")",
+                                    width: 100
+                                }]
+                            });
+                        });
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td width="100%">
+                    <input type="submit" id="btnAddNewOption" value="@T("Plugins.Widgets.qBoSlider.CreateOrUpdate.AddNew")" onclick="javascript:OpenWindow('@(Url.Action("CreateSlidePopup", "qBoSlider", new { btnId = "btnRefresh", formId = "slide-collection-form" }))', 1300, 500, true); return false;" class="k-button" />
+                    <input type="submit" id="btnRefresh" style="display: none" />
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $('#btnRefresh').click(function () {
+                                //refresh grid
+                                var grid = $("#slider-grid").data('kendoGrid');
+                                grid.dataSource.read();
+
+                                //return false to don't reload a page
+                                return false;
+                            });
+                        });
+                    </script>
+                </td>
+            </tr>
+        </table>
+    }
+}

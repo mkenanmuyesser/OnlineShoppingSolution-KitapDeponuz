@@ -1,0 +1,12 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentPayPalDirect\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Views\PaymentPayPalDirect\PaymentInfo.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Payments.PayPalDirect\Nop.Plugin.Payments.PayPalDirect.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csproj.App.config
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.csprojResolveAssemblyReference.cache
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Payments.PayPalDirect\obj\Debug\Nop.Plugin.Payments.PayPalDirect.pdb

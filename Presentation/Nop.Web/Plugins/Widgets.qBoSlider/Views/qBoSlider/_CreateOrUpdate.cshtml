@@ -1,0 +1,182 @@
+﻿@model SlideModel
+
+@using Nop.Plugin.Widgets.qBoSlider.Models
+@using Nop.Web.Framework;
+
+@Html.ValidationSummary(false)
+@Html.HiddenFor(model => model.Id)
+
+@if (ViewBag.RefreshPage == true)
+{
+    <script type="text/javascript">
+        try {window.opener.document.forms['@(ViewBag.formId)'].@(ViewBag.btnId).click();}
+        catch (e){}
+        window.close();
+    </script>
+}
+
+<div id="slide-edit">
+    <ul>
+        <li @Html.RenderSelectedTabIndex(0, GetSelectedTabIndex())>
+            @T("Plugins.Widgets.qBoSlider.SlideInfo")
+        </li>
+        <li @Html.RenderSelectedTabIndex(1, GetSelectedTabIndex())>
+            @T("Plugins.Widgets.qBoSlider.StoreMapping")
+        </li>
+    </ul>
+    <div>
+        @TabSlideInfo()
+    </div>
+    @if (Model.Id == 0)
+    {
+        <div>
+            @TabStoreMapping()
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#slide-edit").kendoTabStrip({
+            animation: {
+                open: {
+                    effects: "fadeIn"
+                }
+            },
+            select: tabstrip_on_tab_select
+        });
+    });
+</script>
+
+@*save selected tab index*@
+<input type="hidden" id="selected-tab-index" name="selected-tab-index" value="@(GetSelectedTabIndex())">
+
+@helper TabSlideInfo()
+{
+    @(Html.LocalizedEditor<SlideModel, SlideLocalizedModel>("slide-localized",
+    @<table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Locales[item].PictureId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Locales[item].PictureId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Locales[item].Hyperlink):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Locales[item].Hyperlink)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Locales[item].Description):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Locales[item].Description, "RichEditor")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.HiddenFor(model => model.Locales[item].LanguageId)
+            </td>
+        </tr>
+    </table>
+    ,
+    @<table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.PictureId):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.PictureId)
+                @Html.ValidationMessageFor(model => model.PictureId)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Hyperlink):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Hyperlink)
+            </td>
+        </tr>
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.Description):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.Description, "RichEditor")
+            </td>
+        </tr>
+    </table>
+    ))
+    <table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.DisplayOrder):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.DisplayOrder)
+                @Html.ValidationMessageFor(model => model.DisplayOrder)
+            </td>
+        </tr>
+    </table>
+}
+
+@helper TabStoreMapping()
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#@Html.FieldIdFor(model => model.LimitedToStores)").click(toggleStoreMapping);
+            toggleStoreMapping();
+        });
+
+            function toggleStoreMapping() {
+                if ($('#@Html.FieldIdFor(model => model.LimitedToStores)').is(':checked')) {
+                    $('#pnl-available-stores').show();
+                }
+                else {
+                    $('#pnl-available-stores').hide();
+                }
+            }
+
+    </script>
+
+    <table class="adminContent">
+        <tr>
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.LimitedToStores):
+            </td>
+            <td class="adminData">
+                @Html.EditorFor(model => model.LimitedToStores)
+                @Html.ValidationMessageFor(model => model.LimitedToStores)
+            </td>
+        </tr>
+        <tr id="pnl-available-stores">
+            <td class="adminTitle">
+                @Html.NopLabelFor(model => model.AvailableStores):
+            </td>
+            <td class="adminData">
+                @if (Model.AvailableStores != null && Model.AvailableStores.Count > 0)
+                {
+                    foreach (var store in Model.AvailableStores)
+                    {
+                        int id = Convert.ToInt32(store.Value);
+                        <div>
+                            <input type="checkbox" name="SelectedStoreIds" value="@id" checked="@(Model.SelectedStoreIds != null && Model.SelectedStoreIds.Contains(id))" />@store.Text
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div>No stores defined</div>
+                }
+            </td>
+        </tr>
+    </table>
+}

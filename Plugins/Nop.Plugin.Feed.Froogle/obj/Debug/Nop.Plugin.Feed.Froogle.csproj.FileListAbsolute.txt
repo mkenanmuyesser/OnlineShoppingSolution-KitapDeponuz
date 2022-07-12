@@ -1,0 +1,11 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Views\FeedFroogle\Configure.cshtml
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Description.txt
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\web.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Content\styles.css
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\logo.jpg
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Plugins\Feed.Froogle\Nop.Plugin.Feed.Froogle.pdb
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.csprojResolveAssemblyReference.cache
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.dll
+D:\Programlar\KitapDeponuzProject\Plugins\Nop.Plugin.Feed.Froogle\obj\Debug\Nop.Plugin.Feed.Froogle.pdb

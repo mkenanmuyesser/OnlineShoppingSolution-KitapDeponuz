@@ -1,0 +1,68 @@
+﻿@using Nop.Core
+@using Nop.Core.Domain.Common
+@using Nop.Core.Infrastructure
+@using Nop.Services.Catalog
+@using Nop.Services.Media
+@using Nop.Web.Framework.UI
+@using Nop.Services.Seo
+@using Nop.Services.Configuration
+@using NopHub.Nop.Plugin.BrandCarousel.Models
+
+@{
+    ISettingService _settingService = EngineContext.Current.Resolve<ISettingService>();
+    IManufacturerService mService = EngineContext.Current.Resolve<IManufacturerService>();
+    IPictureService picService = EngineContext.Current.Resolve<IPictureService>();
+
+    var uhwSettings = _settingService.LoadSetting<BrandCarouselSettings>();
+
+    Layout = "";
+    string widgetZone = "";
+    bool zoneMatch = false;
+    if (!String.IsNullOrEmpty(uhwSettings.EnabledWidgetZones)) {
+    string[] selectedZones = uhwSettings.EnabledWidgetZones.Split( new char[] {','} );
+
+    if (ViewContext.RouteData.Values["widgetZone"] != null)
+    {
+        widgetZone = ViewContext.RouteData.Values["widgetZone"].ToString();
+
+        if (widgetZone == "head_html_tag" && uhwSettings.EnabledWidgetZones.Length > 1)
+        {
+            Html.AddScriptParts("~/Plugins/NopHub.BrandCarousel/Scripts/owl.carousel.min.js");
+            Html.AddScriptParts("~/Plugins/NopHub.BrandCarousel/Scripts/brandcarousel.js");
+            Html.AddCssFileParts("~/Plugins/NopHub.BrandCarousel/Content/owl.carousel.css");
+
+        }
+        else {
+            if (uhwSettings.EnabledWidgetZones.Length > 1) {
+            foreach (string z in selectedZones) {
+                if (widgetZone == z) {
+                    zoneMatch = true;   
+                }
+            }
+            }
+        }
+    }
+    }
+             
+    
+}
+@if (zoneMatch)
+{
+<div class="brand-carousel-wrapper">
+    <p>&nbsp;</p>
+    <div class="owl-carousel">
+        @foreach (var m in mService.GetAllManufacturers("", 0, 20, false))
+        {
+            if (m.PictureId > 0)
+            {
+                var url = picService.GetPictureUrl(m.PictureId, 200);
+            <div>
+                <a href="@Url.RouteUrl("Manufacturer", new { SeName = m.GetSeName() })">
+                    <img class="brand-image" src="@url" /></a>
+            </div>
+            }
+        }
+
+    </div>
+</div>
+}

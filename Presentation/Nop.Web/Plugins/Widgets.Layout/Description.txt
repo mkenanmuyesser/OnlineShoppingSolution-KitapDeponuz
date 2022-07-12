@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: Layout Widget
+SystemName: Widgets.Layout
+Version: 2.11
+SupportedVersions: 3.70
+Author: Marc Williams
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.Layout.dll

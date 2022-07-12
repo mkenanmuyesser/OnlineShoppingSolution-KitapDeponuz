@@ -1,0 +1,12 @@
+DiscountRequirement.HadSpentAmount
+DiscountRequirement.HasAllProducts
+DiscountRequirement.HasOneProduct
+DiscountRequirement.MustBeAssignedToCustomerRole
+ExternalAuth.Facebook
+Payments.Manual
+Payments.PurchaseOrder
+Shipping.FixedRate
+Tax.FixedRate
+Widgets.GoogleAnalytics
+Widgets.NivoSlider
+NopHub.BrandCarousel

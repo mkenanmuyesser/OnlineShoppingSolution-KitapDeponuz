@@ -1,0 +1,8 @@
+﻿Group: Widgets
+FriendlyName: Countdown
+SystemName: Widgets.Countdown
+Version: 1.01
+SupportedVersions: 3.70
+Author: nopCommerce, Keith Wood, Arthur Alexeev
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.Countdown.dll

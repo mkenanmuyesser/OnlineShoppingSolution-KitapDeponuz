@@ -1,0 +1,67 @@
+﻿@model SendPrivateMessageModel
+@using Nop.Web.Extensions;
+@using Nop.Web.Models.PrivateMessages;
+@{    
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    Html.AddTitleParts(T("PageTitle.SendPM").Text);
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="page private-message-send-page from-panel">
+        <div class="page-title panel-heading">
+            <h1>@T("PrivateMessages.Send.PostMessage")</h1>
+        </div>
+        <div class="page-body panel-body">
+            @{
+                var validationSummary = Html.ValidationSummary(true);
+            }
+            @if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+            {
+                <div class="message-error">@validationSummary</div>
+            }
+            @Html.HiddenFor(model => model.ToCustomerId)
+            @Html.HiddenFor(model => model.ReplyToMessageId)
+            <fieldset >
+                 <legend>@T("PrivateMessages.Send.To")
+                        @if (Model.AllowViewingToProfile)
+                        {
+                            <a href="@Url.RouteUrl("CustomerProfile", new { id = Model.ToCustomerId })">@(Model.CustomerToName)</a>
+                        }
+                        else
+                        {
+                            @Model.CustomerToName
+                        }
+                 </legend>
+                <div class="form-fields form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-md-4">@T("PrivateMessages.Send.Subject")</label>
+                        <div class="col-md-5">
+                            @Html.TextBoxFor(model => model.Subject, new { @class = " page-title- form-control" })
+                            @Html.ValidationMessageFor(model => model.Subject)
+                        </div>
+                    </div>
+                    <div class=" message form-group">
+                        <label class="control-label col-md-4">@T("PrivateMessages.Send.Message")</label>
+                        <div class="col-md-5">
+                            @Html.BBCodeEditor("Message")
+                            @Html.TextAreaFor(model => model.Message, new { @class = "bb-editor-text form-control", TextMode = "MultiLine" })
+                            @Html.ValidationMessageFor(model => model.Message)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <div class="col-md-offset-4 col-md-4">
+                            <div class="form-group row">
+                                <input type="submit" value="@T("PrivateMessages.Send.SendButton")" class="btn btn-primary send-pm-button" />
+                                <input type="button" class="btn btn-default cancel-pm-button" value="@T("PrivateMessages.Send.CancelButton")"
+                                       onclick="setLocation('@Url.RouteUrl("PrivateMessages")')" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+           </fieldset>
+        </div>
+    </div>
+}

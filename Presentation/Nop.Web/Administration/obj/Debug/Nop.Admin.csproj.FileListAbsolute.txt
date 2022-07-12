@@ -1,0 +1,6 @@
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\bin\Nop.Admin.dll.config
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\bin\Nop.Admin.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\bin\Nop.Admin.pdb
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.csprojResolveAssemblyReference.cache
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.dll
+D:\Programlar\KitapDeponuzProject\Presentation\Nop.Web\Administration\obj\Debug\Nop.Admin.pdb
