@@ -1,2 +1,9 @@
 # OnlineShoppingSolution-KitapDeponuz
- 2017
+
+Made in 2017
+
+Please check .extra_files folder or github wiki part for detailed project information, screenshots and database files.
+
+Book sales platform
+
+Nopcommerce infrastructure was used, but some parts were customized.
