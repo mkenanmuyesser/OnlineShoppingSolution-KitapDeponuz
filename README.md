@@ -10,4 +10,4 @@ Nopcommerce infrastructure was used, but some parts were customized.
 
 Minran Kenan MÜYESSER
 mkenanmuyesser@hotmail.com
-https://www.linkedin.com/in/minran-kenan-müyesser
+https://www.linkedin.com/in/mkenanmuyesser
